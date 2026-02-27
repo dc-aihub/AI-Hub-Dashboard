@@ -6,115 +6,88 @@
 <title>AI/HUB – Durham College</title>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
-  body{font-family:'Segoe UI',sans-serif;background:#1a2332;color:#e0e6ed;min-height:100vh}
+  html,body{height:100%;font-family:'Segoe UI',sans-serif;background:#1a2332;color:#e0e6ed;overflow:hidden}
   a{color:#2ecc8a;text-decoration:none}
 
+  .page{display:flex;flex-direction:column;height:100vh}
+
   /* HEADER */
-  header{display:flex;justify-content:space-between;align-items:center;padding:0 40px 0 0;border-bottom:1px solid rgba(255,255,255,0.08);background:#1a2332;overflow:hidden}
-  .logo-wrap{background:#ffffff;padding:18px 50px 18px 30px;clip-path:polygon(0 0, 100% 0, 88% 100%, 0 100%);margin-right:30px;flex-shrink:0;display:flex;align-items:center}
-  .logo{display:flex;align-items:center;gap:14px}
-  .header-middle{display:flex;align-items:center;gap:14px;flex:1;padding-left:20px}
-  .logo-text{font-size:1.5rem;font-weight:900;color:#fff;letter-spacing:-1px}
-  .logo-text span{color:#2ecc8a}
-  .logo-divider{width:1px;height:30px;background:rgba(0,0,0,0.2)}
+  header{display:flex;justify-content:space-between;align-items:center;padding:0 40px 0 0;border-bottom:1px solid rgba(255,255,255,0.08);background:#1a2332;flex-shrink:0}
+  .logo-wrap{background:#fff;padding:8px 40px 8px 16px;clip-path:polygon(0 0,100% 0,88% 100%,0 100%);margin-right:30px;flex-shrink:0;display:flex;align-items:center}
+  .header-middle{display:flex;align-items:center;flex:1}
   .logo-sub{font-size:0.78rem;color:#e0e6ed;line-height:1.5}
-  .logo-sub strong{color:#ffffff;font-weight:600}
+  .logo-sub strong{color:#fff;font-weight:600}
   .contact{text-align:right;font-size:0.78rem;color:#aab8c8;line-height:1.7}
   .contact a{color:#2ecc8a}
 
   /* HERO */
-  .hero{text-align:center;padding:60px 40px 40px}
-  .hero h1{font-size:2.2rem;font-weight:800;color:#fff;margin-bottom:14px;line-height:1.3}
+  .hero{text-align:center;padding:14px 40px 10px;flex-shrink:0}
+  .hero h1{font-size:1.7rem;font-weight:800;color:#fff;margin-bottom:6px;line-height:1.3}
   .hero h1 span{color:#2ecc8a}
-  .hero p{font-size:1rem;color:#aab8c8;max-width:600px;margin:0 auto;line-height:1.6}
+  .hero p{font-size:0.88rem;color:#aab8c8;max-width:580px;margin:0 auto;line-height:1.5}
 
   /* CARDS */
-  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:0 40px 40px;max-width:1200px;margin:0 auto}
-  .card{background:#1e2d3d;border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:28px}
-  .card-num{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;background:#2ecc8a;color:#1a2332;font-weight:900;font-size:0.75rem;border-radius:6px;margin-right:10px}
-  .card-title{display:flex;align-items:center;font-size:1.05rem;font-weight:700;color:#2ecc8a;margin-bottom:18px}
-  
-  /* Services */
-  .service-item{background:#243447;border-radius:8px;padding:14px 16px;margin-bottom:10px}
-  .service-item h4{font-size:0.9rem;font-weight:700;color:#fff;margin-bottom:3px}
-  .service-item p{font-size:0.78rem;color:#aab8c8}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:10px 24px;flex-shrink:0}
+  .card{background:#1e2d3d;border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:16px}
+  .card-num{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;background:#2ecc8a;color:#1a2332;font-weight:900;font-size:0.68rem;border-radius:5px;margin-right:8px;flex-shrink:0}
+  .card-title{display:flex;align-items:center;font-size:0.92rem;font-weight:700;color:#2ecc8a;margin-bottom:10px;flex-shrink:0}
 
-  /* Expertise */
-  .expertise-item{display:flex;align-items:center;gap:10px;background:#243447;border-radius:8px;padding:11px 14px;margin-bottom:8px;font-size:0.85rem;color:#e0e6ed}
-  .dot{width:8px;height:8px;background:#2ecc8a;border-radius:50%;flex-shrink:0}
+  .service-item{background:#243447;border-radius:7px;padding:8px 12px;margin-bottom:7px;flex-shrink:0}
+  .service-item h4{font-size:0.82rem;font-weight:700;color:#fff;margin-bottom:2px}
+  .service-item p{font-size:0.71rem;color:#aab8c8}
 
-  /* Advantage */
-  .adv-item{display:flex;gap:12px;margin-bottom:16px;align-items:flex-start}
-  .adv-dot{width:10px;height:10px;background:#f5a623;border-radius:50%;flex-shrink:0;margin-top:4px}
-  .adv-item h4{font-size:0.88rem;font-weight:700;color:#fff;margin-bottom:2px}
-  .adv-item p{font-size:0.76rem;color:#aab8c8;line-height:1.4}
+  .expertise-item{display:flex;align-items:center;gap:8px;background:#243447;border-radius:7px;padding:7px 12px;margin-bottom:5px;font-size:0.8rem;color:#e0e6ed;flex-shrink:0}
+  .dot{width:7px;height:7px;background:#2ecc8a;border-radius:50%;flex-shrink:0}
+
+  .adv-item{display:flex;gap:10px;margin-bottom:10px;align-items:flex-start;flex-shrink:0}
+  .adv-dot{width:9px;height:9px;background:#f5a623;border-radius:50%;flex-shrink:0;margin-top:3px}
+  .adv-item h4{font-size:0.82rem;font-weight:700;color:#fff;margin-bottom:1px}
+  .adv-item p{font-size:0.7rem;color:#aab8c8;line-height:1.3}
 
   /* STATS */
-  .stats{background:#1e2d3d;border:1px solid rgba(255,255,255,0.08);border-radius:12px;margin:0 40px 30px;padding:30px 40px;max-width:1200px;margin-left:auto;margin-right:auto}
-  .stats-label{color:#2ecc8a;font-size:0.85rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:24px}
-  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);text-align:center;gap:20px}
-  .stat-num{font-size:2.2rem;font-weight:900;color:#f5a623;line-height:1}
-  .stat-desc{font-size:0.78rem;color:#aab8c8;margin-top:6px}
+  .stats{background:#1e2d3d;border:1px solid rgba(255,255,255,0.08);border-radius:10px;margin:0 24px 10px;padding:14px 30px;flex-shrink:0}
+  .stats-label{color:#2ecc8a;font-size:0.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);text-align:center}
+  .stat-num{font-size:1.9rem;font-weight:900;color:#f5a623;line-height:1}
+  .stat-desc{font-size:0.71rem;color:#aab8c8;margin-top:3px}
 
   /* FOOTER */
-  footer{text-align:center;padding:20px;font-size:0.82rem;color:#f5a623;font-weight:600;border-top:1px solid rgba(255,255,255,0.06)}
-
-  @media(max-width:900px){
-    .cards{grid-template-columns:1fr}
-    .stats-grid{grid-template-columns:repeat(2,1fr)}
-    header{flex-direction:column;gap:12px;text-align:center}
-    .contact{text-align:center}
-  }
-  @media(max-width:500px){
-    header,main,.cards,.stats{padding-left:16px;padding-right:16px}
-    .hero{padding:40px 16px 30px}
-    .hero h1{font-size:1.6rem}
-  }
-
-  /* counter animation */
-  @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-  .hero,.cards,.stats{animation:fadeUp .6s ease both}
-  .cards{animation-delay:.15s}
-  .stats{animation-delay:.3s}
+  footer{text-align:center;padding:8px;font-size:0.76rem;color:#f5a623;font-weight:600;border-top:1px solid rgba(255,255,255,0.06);flex-shrink:0}
 </style>
 </head>
 <body>
+<div class="page">
 
-<header>
-  <div class="logo-wrap">
-    <div class="logo">
-      <svg xml:space="preserve" viewBox="876.1500000000001 1003.73 425.52000000000004 138.24" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" style="height:80px;width:auto">
-<g transform="matrix(1 0 0 1 1038.71 1075.16)"><path stroke-linecap="round" d="M 70.4296 6.6978 L 70.5551 6.6978 L 74.4732 28.6865 L 66.4487 28.6865 L 70.4296 6.6978 Z M 67.1439 0 L 57.0977 45.6208 L 63.416 45.6208 L 65.5015 33.994 L 75.3576 33.994 L 77.4431 45.6208 L 83.7615 45.6208 L 74.4732 0 L 67.1439 0 Z" transform="translate(-70.43, -22.81)" style="fill: rgb(25,34,43);"/></g>
-<g transform="matrix(1 0 0 1 1058.05 1075.16)"><rect height="45.6208" width="6.31837" ry="0" rx="0" y="-22.8104" x="-3.159185" style="fill: rgb(25,34,43);"/></g>
-<g transform="matrix(1 0 0 1 1077.52 1075.16)"><path stroke-linecap="round" d="M 112.89 0 L 99.2422 45.6208 L 105.585 45.6208 L 119.233 0 L 112.89 0 Z" transform="translate(-109.24, -22.81)" style="fill: rgb(0,102,65);"/></g>
-<g transform="matrix(1 0 0 1 1104.48 1075.16)"><path stroke-linecap="round" d="M 140.401 0 L 140.401 19.5875 L 131.996 19.5875 L 131.996 0 L 125.678 0 L 125.678 45.6208 L 131.996 45.6208 L 131.996 24.8959 L 140.401 24.8959 L 140.401 45.6208 L 146.719 45.6208 L 146.719 0 L 140.401 0 Z" transform="translate(-136.2, -22.81)" style="fill: rgb(0,102,65);"/></g>
-<g transform="matrix(1 0 0 1 1129.91 1075.35)"><path stroke-linecap="round" d="M 172.338 0 L 172.338 35.3216 C 172.338 42.4413 168.777 46.0002 161.659 46.0002 C 154.497 46.0002 150.918 42.4413 150.918 35.3216 L 150.918 0 L 157.236 0 L 157.236 36.3962 C 157.236 37.9979 157.573 39.1759 158.247 39.9339 C 158.92 40.6918 160.059 41.0712 161.659 41.0712 C 163.218 41.0712 164.334 40.6918 165.009 39.9339 C 165.682 39.1759 166.019 37.9979 166.019 36.3962 L 166.019 0 L 172.338 0 Z" transform="translate(-161.63, -23)" style="fill: rgb(0,102,65);"/></g>
-<g transform="matrix(1 0 0 1 1155.03 1075.16)"><path stroke-linecap="round" d="M 176.537 45.6208 L 176.537 0 L 187.531 0 C 191.281 0 193.734 0.758869 194.893 2.27476 C 196.052 3.79158 196.631 6.71904 196.631 11.0581 C 196.631 15.3537 196.24 18.1879 195.462 19.5561 C 194.682 20.9252 193.156 21.7579 190.881 22.0524 L 190.881 22.1789 C 193.409 22.6424 195.052 23.5277 195.81 24.8322 C 196.568 26.1385 196.947 28.729 196.947 32.6046 C 196.947 35.2579 196.83 37.3332 196.599 38.8279 C 196.367 40.3235 195.882 41.6307 195.146 42.7459 C 194.408 43.863 193.355 44.6209 191.987 45.0207 C 190.617 45.4214 188.774 45.6208 186.458 45.6208 L 176.537 45.6208 Z M 182.856 4.92803 L 182.856 19.5875 L 186.521 19.5875 C 188.417 19.5875 189.586 19.1564 190.028 18.2932 C 190.47 17.4291 190.691 15.1238 190.691 11.3738 C 190.691 8.76208 190.385 7.03477 189.775 6.19189 C 189.164 5.34993 187.847 4.92803 185.825 4.92803 L 182.856 4.92803 Z M 182.856 24.5165 L 182.856 40.6918 L 186.774 40.6918 C 188.584 40.6918 189.743 40.209 190.248 39.2387 C 190.754 38.2703 191.007 35.9955 191.007 32.4144 C 191.007 29.0023 190.765 26.8337 190.281 25.9059 C 189.795 24.9799 188.689 24.5165 186.963 24.5165 L 182.856 24.5165 Z" transform="translate(-186.74, -22.81)" style="fill: rgb(0,102,65);"/></g>
-<g transform="matrix(1 0 0 1 998.39 1061.72)"><path stroke-linecap="round" d="M 36.7258 2.40256 C 36.7267 4.43821 36.7295 6.47571 36.7322 8.51136 C 36.735 11.1249 36.7378 13.7376 36.7378 16.3502 L 23.4631 16.3502 L 23.4631 2.40256 L 36.7258 2.40256 Z M 39.0873 0.0410156 L 21.1016 0.0410156 L 21.1016 18.7118 L 39.0984 18.7118 C 39.1039 12.7544 39.0873 6.79698 39.0873 0.839582 L 39.0873 0.0410156 Z" transform="translate(-30.1, -9.38)" style="fill: rgb(0,102,65);"/></g>
-<g transform="matrix(1 0 0 1 977.28 1061.72)"><path stroke-linecap="round" d="M 15.6373 2.40256 L 15.6373 16.3502 L 2.36175 16.3502 C 2.36175 13.7394 2.36452 11.1277 2.36729 8.51782 C 2.37006 6.4794 2.37283 4.44006 2.37283 2.40256 L 15.6373 2.40256 Z M 17.9989 0.0410156 L 0.0122088 0.0410156 L 0.0122088 0.839582 C 0.0122088 6.79698 -0.00440874 12.7544 0.00113045 18.7118 L 17.9989 18.7118 L 17.9989 0.0410156 Z" transform="translate(-9, -9.38)" style="fill: rgb(0,102,65);"/></g>
-<g transform="matrix(1 0 0 1 998.38 1085.94)"><path stroke-linecap="round" d="M 36.723 24.175 C 36.7212 25.209 36.7156 26.2439 36.7092 27.2779 C 36.6824 31.4803 34.9394 34.5712 31.3795 36.7296 C 28.7817 38.3027 26.1007 39.8352 23.4631 41.328 L 23.4631 24.175 L 36.723 24.175 Z M 39.0929 21.8135 L 21.1016 21.8135 L 21.1016 45.3744 C 24.9531 43.1957 28.8186 41.0409 32.6018 38.7486 C 36.8255 36.1895 39.0384 32.3056 39.0707 27.2936 C 39.0818 25.4666 39.0873 23.6396 39.0929 21.8135 Z" transform="translate(-30.1, -33.59)" style="fill: rgb(0,102,65);"/></g>
-<g transform="matrix(1 0 0 1 977.29 1085.94)"><path stroke-linecap="round" d="M 15.6365 24.175 L 15.6365 41.329 C 12.998 39.8362 10.3161 38.3027 7.7201 36.7296 C 4.15933 34.5712 2.41541 31.4803 2.38863 27.2779 C 2.38217 26.2439 2.37756 25.209 2.37386 24.175 L 15.6365 24.175 Z M 17.9981 21.8135 L 0.00585938 21.8135 C 0.0104754 23.6396 0.0160146 25.4666 0.0280161 27.2936 C 0.0594049 32.3056 2.27139 36.1895 6.49594 38.7486 C 10.2811 41.0428 14.1465 43.1957 17.9981 45.3744 L 17.9981 21.8135 Z" transform="translate(-9, -33.59)" style="fill: rgb(0,102,65);"/></g>
-</svg>
+  <header>
+    <div class="logo-wrap">
+      <svg xml:space="preserve" viewBox="876.15 1003.73 425.52 138.24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="height:40px;width:auto">
+        <g transform="matrix(1 0 0 1 1038.71 1075.16)"><path d="M 70.4296 6.6978 L 70.5551 6.6978 L 74.4732 28.6865 L 66.4487 28.6865 Z M 67.1439 0 L 57.0977 45.6208 L 63.416 45.6208 L 65.5015 33.994 L 75.3576 33.994 L 77.4431 45.6208 L 83.7615 45.6208 L 74.4732 0 Z" transform="translate(-70.43,-22.81)" style="fill:rgb(25,34,43)"/></g>
+        <g transform="matrix(1 0 0 1 1058.05 1075.16)"><rect height="45.6208" width="6.31837" y="-22.8104" x="-3.159185" style="fill:rgb(25,34,43)"/></g>
+        <g transform="matrix(1 0 0 1 1077.52 1075.16)"><path d="M 112.89 0 L 99.2422 45.6208 L 105.585 45.6208 L 119.233 0 Z" transform="translate(-109.24,-22.81)" style="fill:rgb(0,102,65)"/></g>
+        <g transform="matrix(1 0 0 1 1104.48 1075.16)"><path d="M 140.401 0 L 140.401 19.5875 L 131.996 19.5875 L 131.996 0 L 125.678 0 L 125.678 45.6208 L 131.996 45.6208 L 131.996 24.8959 L 140.401 24.8959 L 140.401 45.6208 L 146.719 45.6208 L 146.719 0 Z" transform="translate(-136.2,-22.81)" style="fill:rgb(0,102,65)"/></g>
+        <g transform="matrix(1 0 0 1 1129.91 1075.35)"><path d="M 172.338 0 L 172.338 35.3216 C 172.338 42.4413 168.777 46.0002 161.659 46.0002 C 154.497 46.0002 150.918 42.4413 150.918 35.3216 L 150.918 0 L 157.236 0 L 157.236 36.3962 C 157.236 37.9979 157.573 39.1759 158.247 39.9339 C 158.92 40.6918 160.059 41.0712 161.659 41.0712 C 163.218 41.0712 164.334 40.6918 165.009 39.9339 C 165.682 39.1759 166.019 37.9979 166.019 36.3962 L 166.019 0 Z" transform="translate(-161.63,-23)" style="fill:rgb(0,102,65)"/></g>
+        <g transform="matrix(1 0 0 1 1155.03 1075.16)"><path d="M 176.537 45.6208 L 176.537 0 L 187.531 0 C 191.281 0 193.734 0.758869 194.893 2.27476 C 196.052 3.79158 196.631 6.71904 196.631 11.0581 C 196.631 15.3537 196.24 18.1879 195.462 19.5561 C 194.682 20.9252 193.156 21.7579 190.881 22.0524 L 190.881 22.1789 C 193.409 22.6424 195.052 23.5277 195.81 24.8322 C 196.568 26.1385 196.947 28.729 196.947 32.6046 C 196.947 35.2579 196.83 37.3332 196.599 38.8279 C 196.367 40.3235 195.882 41.6307 195.146 42.7459 C 194.408 43.863 193.355 44.6209 191.987 45.0207 C 190.617 45.4214 188.774 45.6208 186.458 45.6208 Z M 182.856 4.92803 L 182.856 19.5875 L 186.521 19.5875 C 188.417 19.5875 189.586 19.1564 190.028 18.2932 C 190.47 17.4291 190.691 15.1238 190.691 11.3738 C 190.691 8.76208 190.385 7.03477 189.775 6.19189 C 189.164 5.34993 187.847 4.92803 185.825 4.92803 Z M 182.856 24.5165 L 182.856 40.6918 L 186.774 40.6918 C 188.584 40.6918 189.743 40.209 190.248 39.2387 C 190.754 38.2703 191.007 35.9955 191.007 32.4144 C 191.007 29.0023 190.765 26.8337 190.281 25.9059 C 189.795 24.9799 188.689 24.5165 186.963 24.5165 Z" transform="translate(-186.74,-22.81)" style="fill:rgb(0,102,65)"/></g>
+        <g transform="matrix(1 0 0 1 998.39 1061.72)"><path d="M 36.7258 2.40256 C 36.7267 4.43821 36.7295 6.47571 36.7322 8.51136 C 36.735 11.1249 36.7378 13.7376 36.7378 16.3502 L 23.4631 16.3502 L 23.4631 2.40256 Z M 39.0873 0.0410156 L 21.1016 0.0410156 L 21.1016 18.7118 L 39.0984 18.7118 C 39.1039 12.7544 39.0873 6.79698 39.0873 0.839582 Z" transform="translate(-30.1,-9.38)" style="fill:rgb(0,102,65)"/></g>
+        <g transform="matrix(1 0 0 1 977.28 1061.72)"><path d="M 15.6373 2.40256 L 15.6373 16.3502 L 2.36175 16.3502 C 2.36175 13.7394 2.36452 11.1277 2.36729 8.51782 C 2.37006 6.4794 2.37283 4.44006 2.37283 2.40256 Z M 17.9989 0.0410156 L 0.0122088 0.0410156 L 0.0122088 0.839582 C 0.0122088 6.79698 -0.00440874 12.7544 0.00113045 18.7118 L 17.9989 18.7118 Z" transform="translate(-9,-9.38)" style="fill:rgb(0,102,65)"/></g>
+        <g transform="matrix(1 0 0 1 998.38 1085.94)"><path d="M 36.723 24.175 C 36.7212 25.209 36.7156 26.2439 36.7092 27.2779 C 36.6824 31.4803 34.9394 34.5712 31.3795 36.7296 C 28.7817 38.3027 26.1007 39.8352 23.4631 41.328 L 23.4631 24.175 Z M 39.0929 21.8135 L 21.1016 21.8135 L 21.1016 45.3744 C 24.9531 43.1957 28.8186 41.0409 32.6018 38.7486 C 36.8255 36.1895 39.0384 32.3056 39.0707 27.2936 C 39.0818 25.4666 39.0873 23.6396 39.0929 21.8135 Z" transform="translate(-30.1,-33.59)" style="fill:rgb(0,102,65)"/></g>
+        <g transform="matrix(1 0 0 1 977.29 1085.94)"><path d="M 15.6365 24.175 L 15.6365 41.329 C 12.998 39.8362 10.3161 38.3027 7.7201 36.7296 C 4.15933 34.5712 2.41541 31.4803 2.38863 27.2779 C 2.38217 26.2439 2.37756 25.209 2.37386 24.175 Z M 17.9981 21.8135 L 0.00585938 21.8135 C 0.0104754 23.6396 0.0160146 25.4666 0.0280161 27.2936 C 0.0594049 32.3056 2.27139 36.1895 6.49594 38.7486 C 10.2811 41.0428 14.1465 43.1957 17.9981 45.3744 Z" transform="translate(-9,-33.59)" style="fill:rgb(0,102,65)"/></g>
+      </svg>
     </div>
-  </div>
-  <div class="header-middle">
-    <div class="logo-divider"></div>
-    <div class="logo-sub"><strong>Durham College</strong> | Technology Access Centre (NSERC)</div>
-  </div>
-  <div class="contact">
-    <a href="https://theaihub.ca" target="_blank">theaihub.ca</a><br>
-    <a href="mailto:theaihub@durhamcollege.ca">theaihub@durhamcollege.ca</a>
-  </div>
-</header>
+    <div class="header-middle">
+      <div class="logo-sub"><strong>Durham College</strong> | Technology Access Centre (NSERC)</div>
+    </div>
+    <div class="contact">
+      <a href="https://theaihub.ca" target="_blank">theaihub.ca</a><br>
+      <a href="mailto:theaihub@durhamcollege.ca">theaihub@durhamcollege.ca</a>
+    </div>
+  </header>
 
-<main>
   <section class="hero">
     <h1>Practical AI Solutions for <span>Real-World Problems</span></h1>
     <p>Helping companies harness AI to increase competitiveness and position themselves for future success</p>
   </section>
 
   <div class="cards">
-    <!-- Card 1 -->
     <div class="card">
       <div class="card-title"><span class="card-num">01</span> Our Services</div>
       <div class="service-item"><h4>Advisory</h4><p>AI strategy &amp; execution roadmaps</p></div>
@@ -122,8 +95,6 @@
       <div class="service-item"><h4>Research &amp; Development</h4><p>Novel AI solutions with funding access</p></div>
       <div class="service-item"><h4>Professional Training</h4><p>Custom &amp; co-branded AI training</p></div>
     </div>
-
-    <!-- Card 2 -->
     <div class="card">
       <div class="card-title"><span class="card-num">02</span> Areas of Expertise</div>
       <div class="expertise-item"><div class="dot"></div>Data Structuring &amp; Pipeline Design</div>
@@ -135,8 +106,6 @@
       <div class="expertise-item"><div class="dot"></div>Responsible AI &amp; Governance</div>
       <div class="expertise-item"><div class="dot"></div>AI Integration &amp; Architecture</div>
     </div>
-
-    <!-- Card 3 -->
     <div class="card">
       <div class="card-title"><span class="card-num">03</span> The AI Hub Advantage</div>
       <div class="adv-item"><div class="adv-dot"></div><div><h4>100% IP Ownership</h4><p>Retain all IP generated through partnership</p></div></div>
@@ -147,7 +116,6 @@
     </div>
   </div>
 
-  <!-- Stats -->
   <div class="stats">
     <div class="stats-label">Impact By Numbers</div>
     <div class="stats-grid">
@@ -157,33 +125,27 @@
       <div><div class="stat-num" data-dollar="true" data-target="5.5">$0M</div><div class="stat-desc">Revenue Generated</div></div>
     </div>
   </div>
-</main>
 
-<footer>#1 Mid-Sized College in Canada for AI Projects &amp; Industry Partnerships</footer>
+  <footer>#1 Mid-Sized College in Canada for AI Projects &amp; Industry Partnerships</footer>
 
+</div>
 <script>
-  // Animate counters
   const counters = document.querySelectorAll('.stat-num');
   const observer = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (!e.isIntersecting) return;
-      const el = e.target;
-      const target = parseFloat(el.dataset.target);
-      const isDollar = el.dataset.dollar === 'true';
-      const duration = 1500;
+      const el = e.target, target = parseFloat(el.dataset.target), isDollar = el.dataset.dollar==='true';
       const start = performance.now();
       function step(now) {
-        const p = Math.min((now - start) / duration, 1);
-        const ease = 1 - Math.pow(1 - p, 3);
-        const val = target * ease;
+        const p = Math.min((now-start)/1500,1), ease = 1-Math.pow(1-p,3), val = target*ease;
         el.textContent = isDollar ? `$${val.toFixed(1)}M` : Math.round(val).toLocaleString();
-        if (p < 1) requestAnimationFrame(step);
+        if(p<1) requestAnimationFrame(step);
       }
       requestAnimationFrame(step);
       observer.unobserve(el);
     });
-  }, {threshold: 0.3});
-  counters.forEach(c => observer.observe(c));
+  },{threshold:0.3});
+  counters.forEach(c=>observer.observe(c));
 </script>
 </body>
 </html>
